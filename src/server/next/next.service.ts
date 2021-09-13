@@ -14,7 +14,7 @@ export class NextService implements OnModuleInit {
     try {
       this.server = createServer({
         // dev: this.configService.get<string>('NODE_ENV') !== 'production',
-        dev: true,
+        dev: process.env.NODE_ENV !== 'production',
         dir: './src/client',
       });
       await this.server.prepare();
