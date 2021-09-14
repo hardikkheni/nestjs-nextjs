@@ -10,11 +10,14 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "incremental": true
   },
   "ts-node": {
     "files": true
+  },
+  "paths": {
+    "@client/*": ["src/client/*"]
   },
   "include": ["src/server", "test"]
 }
