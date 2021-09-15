@@ -1,15 +1,18 @@
 import { Button } from 'reactstrap';
+import Link from 'next/link';
+import classnames from 'classnames';
 import notAuthImg from 'assets/images/pages/not-authorized.svg';
 
 import BlankLayout from '@core/layouts/BlankLayout';
 
-// import '@core/scss/base/pages/page-misc.scss';
+import styles from '@core/scss/base/pages/page-misc.module.scss';
+import { NextPage } from 'next';
 
-const NotAuthorized = () => {
+const NotAuthorized: NextPage = () => {
   return (
     <BlankLayout>
-      <div className="misc-wrapper">
-        <a className="brand-logo" href="/">
+      <div className={styles['misc-wrapper']}>
+        <a className={styles['brand-logo']} href="/">
           <svg viewBox="0 0 139 95" version="1.1" height="28">
             <defs>
               <linearGradient
@@ -76,9 +79,13 @@ const NotAuthorized = () => {
               </g>
             </g>
           </svg>
-          <h2 className="brand-text text-primary ml-1">Vuexy</h2>
+          <h2
+            className={classnames(styles['brand-text'], 'text-primary', 'ml-1')}
+          >
+            Vuexy
+          </h2>
         </a>
-        <div className="misc-inner p-2 p-sm-3">
+        <div className={classnames(styles['misc-inner'], 'p-2', 'p-sm-3')}>
           <div className="w-100 text-center">
             <h2 className="mb-1">You are not authorized! 🔐</h2>
             <p className="mb-2">
@@ -86,7 +93,7 @@ const NotAuthorized = () => {
               account credentials to access the web pages it serves.
             </p>
             <Button
-              to="/pages/login-v2"
+              href="/pages/login-v2"
               color="primary"
               className="btn-sm-block mb-1"
             >

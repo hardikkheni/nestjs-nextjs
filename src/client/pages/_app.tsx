@@ -19,8 +19,6 @@ import '@core/assets/fonts/feather/iconfont.css';
 import '@core/scss/core.scss';
 import 'assets/scss/style.scss';
 
-import '@core/scss/base/pages/page-misc.scss';
-
 const CustomApp: NextPage<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
